@@ -1,53 +1,78 @@
 #works {
-  margin: 0 auto;
-  min-height: calc(100vh -4rem);
+  overflow: hidden;
   width: 100vw;
-  max-width: 60rem;
+  max-width: 65rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 0 1rem;
+  margin: 0 auto;
 }
 
-.worksTitle {
-  margin: 1rem 0;
+.workTitle {
   font-size: 3rem;
+  font-weight: 600;
+  padding-top: 3rem;
+  margin-bottom: 1.5rem;
 }
 
-.worksDesc {
+.workDesc {
   font-weight: 300;
   font-size: 1rem;
+  max-width: 51rem;
+  padding: 0 2rem;
 }
 
-.worksImgs {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+.workBars {
+  margin: 1.5rem;
   width: 100vw;
-  max-width: 65rem;
+  max-width: 80%;
+  text-align: left;
 }
 
-.worksImg {
+.workBar {
+  display: flex;
+  margin: 1rem;
+  padding: 1.5rem 2rem;
+  border-radius: 0.5rem;
+  background: rgb(50, 50, 50);
+}
+
+.workBarImg {
   object-fit: cover;
-  height: 20rem;
-  margin: 0.5rem;
-  background: white;
+  height: 3rem;
+  width: 3rem;
+  margin-right: 2rem;
 }
 
-.workBtn {
-  margin: 3rem 0;
-  padding: 0.5rem 2.5rem;
-  border: none;
-  border-radius: 2rem;
-  background-color: white;
-  font-size: 1rem;
+.workBarText > p,
+.workBarText > a {
+  font-size: 0.8rem !important;
+  font-weight: 100;
 }
 
-@media screen and (max-width: 585px) {
-  .worksImg {
-    height: 48vw;
+@media screen and (max-width: 720px) {
+  .workBarText > p {
+    font-size: 2vw !important;
+  }
+}
+
+a {
+  color: white;
+}
+
+@media screen and (max-width: 480px) {
+  .workBarText > p {
+    font-size: 3vw !important;
+  }
+
+  .workBarImg {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
+
+  .workBarText > h2 {
+    font-size: 5vw;
   }
 }

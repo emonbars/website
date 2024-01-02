@@ -56,6 +56,9 @@
 
 @media screen and (max-width: 480px) {
   .bg {
-    right: -20vw;
+    right: -50vw;
+  }
+  .intriContent {
+    margin-top: -5rem;
   }
 }

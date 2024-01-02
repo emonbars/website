@@ -1,42 +1,57 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import "./contact.css";
 
-import Client1 from "../../assets/client1.png";
-import Client2 from "../../assets/client1.png";
-import Client3 from "../../assets/client1.png";
-import Client4 from "../../assets/client1.png";
-
-import Linkedin from "../../assets/linkedin.svg";
-import Instagram from "../../assets/instagram.svg";
-import Medium from "../../assets/medium.svg";
-import Twitter from "../../assets/square-x-twitter.svg";
+import Linkedin from "../../assets/linkedin.png";
+import Instagram from "../../assets/Instagram.webp";
+import Twitter from "../../assets/x.webp";
+import emailjs from "@emailjs/browser";
+import toast, { Toaster } from "react-hot-toast";
 
 const Contact = () => {
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_s68q78o",
+        "template_9vedzv3",
+        form.current,
+        "sQxX826xM8X1NpYNX"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          e.target.reset();
+          toast.success("Email Send !");
+        },
+        (error) => {
+          toast.error("This didn't work.");
+          console.log(error.text);
+        }
+      );
+  };
   return (
-    <section className="contactPage">
-      <div id="clients">
-        <h1 className="contactPageTitle">My Clients</h1>
-        <p className="clientsDesc">
-          Hi, I'm Eduardo Montoya, a Back end Developer from Querétaro, Mexico.
-          I have some projects like Feek and Nao where I'm work 24/7 in their
-          growth.
-        </p>
-        <div className="clientsImgs">
-          <img src={Client1} alt="emonbars clients" className="clientsImg" />
-          <img src={Client2} alt="emonbars clients" className="clientsImg" />
-          <img src={Client3} alt="emonbars clients" className="clientsImg" />
-          <img src={Client4} alt="emonbars clients" className="clientsImg" />
-        </div>
-      </div>
-      <div id="contact">
+    <section className="contactPage" id="contact">
+      <div>
         <h1 className="contactPageTitle">Contact Me</h1>
         <p className="contactDesc">
           Complete the form below to start a conversation
         </p>
-        <form className="contactForm">
-          <input type="text" className="name" placeholder="Your name" />
-          <input type="email" className="email" placeholder="Your email" />
+        <form className="contactForm" ref={form} onSubmit={sendEmail}>
+          <input
+            type="text"
+            className="name"
+            placeholder="Your name"
+            name="your_name"
+          />
+          <input
+            type="email"
+            className="email"
+            placeholder="Your email"
+            name="your_email"
+          />
           <textarea
             className="msg"
             name="message"
@@ -47,16 +62,26 @@ const Contact = () => {
             Submit
           </button>
           <div className="links">
-            <img src={Linkedin} alt="emonbars linkedin" className="link"></img>
-            <img
-              src={Instagram}
-              alt="emonbars Instagram"
-              className="link"
-            ></img>
-            <img src={Medium} alt="emonbars medium" className="link"></img>
-            <img src={Twitter} alt="emonbars Twitter" className="link"></img>
+            <a href="https://www.linkedin.com/in/emonbars/" target="emonbars">
+              <img
+                src={Linkedin}
+                alt="emonbars linkedin"
+                className="link"
+              ></img>
+            </a>
+            <a href="https://www.instagram.com/emonbars/" target="emonbars">
+              <img
+                src={Instagram}
+                alt="emonbars Instagram"
+                className="link"
+              ></img>
+            </a>
+            <a href="https://twitter.com/emonbars" target="">
+              <img src={Twitter} alt="emonbars Twitter" className="link"></img>
+            </a>
           </div>
         </form>
+        <Toaster position="bottom-center" reverseOrder={false} />
       </div>
     </section>
   );

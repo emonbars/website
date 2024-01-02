@@ -1,71 +1,36 @@
 import React from "react";
-
 import "./skills.css";
 
-import Node from "../../assets/node.png";
-import NestJs from "../../assets/nest.png";
-import Mongo from "../../assets/mongo.png";
-import ReactIcon from "../../assets/react.png";
+import Skil2 from "../../assets/emonbars-js.jpg";
+import Skil5 from "../../assets/emonbars-btc.jpg";
+import Skil1 from "../../assets/emonbars-cto.jpg";
+import Skil3 from "../../assets/emonbars-node.jpg";
+import Skil4 from "../../assets/emonbars-next.jpg";
+import Skil6 from "../../assets/emonbars-logica.jpg";
 
-const Skills = () => {
+const Skill = () => {
   return (
     <section id="skills">
-      <span className="skillTitle">What I do</span>
-      <span className="skillDesc">
-        Hi, I'm Eduardo Montoya, a Back end Developer from Mexico. I have some
-        projects like Feek and Nao where I'm work 24/7 in their growth. What am
-        I doing right now?: 🧑🏽‍💻 I’m currently learning Go and improve in Node.js
-        and Python. 💚 In Platzi Master, I'm work improve soft skills, creating
-        amazing projects and collaborate with beautiful people.
+      <h2 className="skillsTitle">Skills</h2>
+      <span className="skillsDesc">
+        Hi, I'm Eduardo Montoya, With over ten years of experience in software
+        development, I have a deep-seated passion for learning new technologies
+        and a strong love for entrepreneurship. This journey has not only
+        sharpened my technical skills but has also ignited an unquenchable
+        thirst for innovation and applying my expertise in dynamic and
+        challenging environments.
       </span>
-      <div className="skillBars">
-        <div className="skillBar">
-          <img src={Node} alt="node" className="skillBarImg" />
-          <div className="skillBarText">
-            <h2>NodeJS</h2>
-            <p>
-              Hi, I'm Eduardo Montoya, a Back end Developer from Mexico. I have
-              some projects like Feek and Nao where I'm work 24/7 in their
-              growth.
-            </p>
-          </div>
-        </div>
-        <div className="skillBar">
-          <img src={NestJs} alt="nestjs" className="skillBarImg" />
-          <div className="skillBarText">
-            <h2>NestJs</h2>
-            <p>
-              Hi, I'm Eduardo Montoya, a Back end Developer from Mexico. I have
-              some projects like Feek and Nao where I'm work 24/7 in their
-              growth.
-            </p>
-          </div>
-        </div>
-        <div className="skillBar">
-          <img src={ReactIcon} alt="reactjs" className="skillBarImg" />
-          <div className="skillBarText">
-            <h2>React Js</h2>
-            <p>
-              Hi, I'm Eduardo Montoya, a Back end Developer from Mexico. I have
-              some projects like Feek and Nao where I'm work 24/7 in their
-              growth.
-            </p>
-          </div>
-        </div>
-        <div className="skillBar">
-          <img src={Mongo} alt="mongo" className="skillBarImg" />
-          <div className="skillBarText">
-            <h2>Mongo</h2>
-            <p>
-              Hi, I'm Eduardo Montoya, a Back end Developer from Mexico. I have
-              some projects like Feek and Nao where I'm work 24/7 in their
-              growth.
-            </p>
-          </div>
-        </div>
+      <div className="skillsImgs">
+        <img src={Skil1} alt="" className="skillsImg" />
+        <img src={Skil2} alt="" className="skillsImg" />
+        <img src={Skil3} alt="" className="skillsImg" />
+        <img src={Skil4} alt="" className="skillsImg" />
+        <img src={Skil5} alt="" className="skillsImg" />
+        <img src={Skil6} alt="" className="skillsImg" />
       </div>
+      <button className="skillBtn">See more</button>
     </section>
   );
 };
 
-export default Skills;
+export default Skill;

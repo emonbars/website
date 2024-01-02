@@ -26,7 +26,11 @@ const Intro = () => {
           </button>
         </Link>
       </div>
-      <img src={emonbars} alt="" className="bg" />
+      <img
+        src={emonbars}
+        alt="emonbars Eduardo Montoya Barcenas"
+        className="bg"
+      />
     </section>
   );
 };
